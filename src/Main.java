@@ -1,3 +1,23 @@
+/*
+ * Cifra, ferramenta para cifrar textos.
+ * Copyright (C) 2015 SÃªnio Caires
+ * e-mail: seniocaires@gmail.com
+ * 
+ * Este arquivo Ã© parte do programa Cifra
+ * 
+ * Cifra Ã© um software livre; vocÃª pode redistribuÃ­-lo e/ou
+ * modificÃ¡-lo dentro dos termos da LicenÃ§a PÃºblica Geral GNU como
+ * publicada pela FundaÃ§Ã£o do Software Livre (FSF); na versÃ£o 3 da
+ * LicenÃ§a, ou (na sua opiniÃ£o) qualquer versÃ£o.
+ * 
+ * Este programa Ã© distribuÃ­do na esperanÃ§a de que possa ser  Ãºtil,
+ * mas SEM NENHUMA GARANTIA; sem uma garantia implÃ­cita de ADEQUAÃ‡ÃƒO
+ * a qualquer MERCADO ou APLICAÃ‡ÃƒO EM PARTICULAR. Veja a
+ * LicenÃ§a PÃºblica Geral GNU para maiores detalhes.
+ * 
+ * VocÃª deve ter recebido uma cÃ³pia da LicenÃ§a PÃºblica Geral GNU junto
+ * com este programa, Se nÃ£o, veja <http://www.gnu.org/licenses/>.
+ */
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.FlowLayout;
@@ -13,7 +33,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
 /**
- * Data da primeira versão 04/07/2011.
+ * Data da primeira versÃ£o 04/07/2011.
  * @since 0.11.7.1
  * @version 0.11.7.4
  * @author Senio Caires
@@ -103,10 +123,10 @@ public class Main extends JFrame {
 		hash.put('=', ']');
 		hash.put(']', '=');
 
-		hash.put('é', '+');
-		hash.put('+', 'é');
-		hash.put('É', '4');
-		hash.put('4', 'É');
+		hash.put('Ã©', '+');
+		hash.put('+', 'Ã©');
+		hash.put('Ã‰', '4');
+		hash.put('4', 'Ã‰');
 
 		hash.put('5', '#');
 		hash.put('#', '5');
@@ -114,10 +134,10 @@ public class Main extends JFrame {
 		hash.put('0', '!');
 		hash.put('!', '0');
 
-		hash.put('ã', '?');
-		hash.put('?', 'ã');
-		hash.put('Ã', '3');
-		hash.put('3', 'Ã');
+		hash.put('Ã£', '?');
+		hash.put('?', 'Ã£');
+		hash.put('Ãƒ', '3');
+		hash.put('3', 'Ãƒ');
 
 		hash.put('1', ':');
 		hash.put(':', '1');
@@ -136,39 +156,39 @@ public class Main extends JFrame {
 		hash.put(' ', ',');
 		hash.put(',', ' ');
 
-		hash.put('ç', 'ó');
-		hash.put('ó', 'ç');
-		hash.put('Ç', 'Ó');
-		hash.put('Ó', 'Ç');
+		hash.put('Ã§', 'Ã³');
+		hash.put('Ã³', 'Ã§');
+		hash.put('Ã‡', 'Ã“');
+		hash.put('Ã“', 'Ã‡');
 
-		hash.put('ê', ';');
-		hash.put(';', 'ê');
-		hash.put('Ê', '{');
-		hash.put('{', 'Ê');
+		hash.put('Ãª', ';');
+		hash.put(';', 'Ãª');
+		hash.put('ÃŠ', '{');
+		hash.put('{', 'ÃŠ');
 
-		hash.put('í', '}');
-		hash.put('}', 'í');
-		hash.put('Í', '[');
-		hash.put('[', 'Í');
+		hash.put('Ã­', '}');
+		hash.put('}', 'Ã­');
+		hash.put('Ã', '[');
+		hash.put('[', 'Ã');
 
-		hash.put('ú', '<');
-		hash.put('<', 'ú');
-		hash.put('Ú', '(');
-		hash.put('(', 'Ú');
+		hash.put('Ãº', '<');
+		hash.put('<', 'Ãº');
+		hash.put('Ãš', '(');
+		hash.put('(', 'Ãš');
 
-		hash.put('á', '>');
-		hash.put('>', 'á');
-		hash.put('Á', ')');
-		hash.put(')', 'Á');
+		hash.put('Ã¡', '>');
+		hash.put('>', 'Ã¡');
+		hash.put('Ã', ')');
+		hash.put(')', 'Ã');
 
 		hash.put('@', '|');
 		hash.put('|', '@');
 
-		hash.put('ª', '¬');
-		hash.put('¬', 'ª');
+		hash.put('Âª', 'Â¬');
+		hash.put('Â¬', 'Âª');
 
-		hash.put('º', '§');
-		hash.put('§', 'º');
+		hash.put('Âº', 'Â§');
+		hash.put('Â§', 'Âº');
 	}
 
 	public Main() {
