@@ -18,6 +18,8 @@
  * Você deve ter recebido uma cópia da Licença Pública Geral GNU junto
  * com este programa, Se não, veja <http://www.gnu.org/licenses/>.
  */
+package cifra;
+
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.FlowLayout;
