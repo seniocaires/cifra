@@ -1,6 +1,6 @@
 /*
  * Cifra, ferramenta para cifrar textos.
- * Copyright (C) 2015 Sênio Caires
+ * Copyright (c) 2015 Sênio Caires
  * e-mail: seniocaires@gmail.com
  * 
  * Este arquivo é parte do programa Cifra
