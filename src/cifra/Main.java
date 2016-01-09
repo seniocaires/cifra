@@ -164,15 +164,11 @@ public class Main extends JFrame {
 		this.resultado.setText(textoCifrado);
 	}
 
-	public String getTextoEscrito() {
-		return this.getTexto().getText();
-	}
-
 	public void cifrarDecifrarTexto() {
 
-		String textoCifrado = cripDecrip(this.getTextoEscrito());
+		String textoCifrado = Main.cripDecrip(this.texto.getText());
 
-		this.alterarTextoCifrado(textoCifrado);
+		alterarTextoCifrado(textoCifrado);
 	}
 
 	private static String cripDecrip(String mensagem) {
