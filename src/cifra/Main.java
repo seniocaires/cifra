@@ -170,9 +170,9 @@ public class Main extends JFrame {
 
 	public void cifrarDecifrarTexto() {
 
-		String textoCifrado = cripDecrip(getTextoEscrito());
+		String textoCifrado = cripDecrip(this.getTextoEscrito());
 
-		alterarTextoCifrado(textoCifrado);
+		this.alterarTextoCifrado(textoCifrado);
 	}
 
 	private static String cripDecrip(String mensagem) {
