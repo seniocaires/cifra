@@ -44,7 +44,7 @@ public class Main extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 
-	private final JTextArea resultado;
+	private transient final JTextArea resultado;
 	private transient final JTextArea texto;
 	private static Map<Character,Character> hash;
 
@@ -197,7 +197,7 @@ public class Main extends JFrame {
 
 		super("Cifra");
 
-		Container tela = getContentPane();
+		Container tela = obterContainer();
 
 		BorderLayout layout = new BorderLayout();
 		tela.setLayout(layout);
@@ -245,7 +245,7 @@ public class Main extends JFrame {
 
 		this.empacotar();
 	}
- 
+
 	private void alterarConfiguracoes(boolean redimensionavel, boolean visivel) {
 		setResizable(redimensionavel);
 		setVisible(visivel);
@@ -255,12 +255,16 @@ public class Main extends JFrame {
 		pack();
 	}
 
+	private Container obterContainer() {
+		return getContentPane();
+	}
+
 	/**
 	 * Método para inicializar a aplicação.
 	 * @author Senio Caires
-	 * @param args
+	 * @param args - argumentos passados ao inicializar a aplicação não serão utilizados
 	 */
-	public static void main(String args[]) {
+	public static void main(String... args) {
 		Main app = new Main();
 		app.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
@@ -268,6 +272,7 @@ public class Main extends JFrame {
 	private class Tratador implements ActionListener {
 
 		public Tratador() {
+			// Construtor padrão.
 		}
 
 		@Override
@@ -279,6 +284,7 @@ public class Main extends JFrame {
 	private class TratadorLimpar implements ActionListener {
 
 		public TratadorLimpar() {
+			// Construtor padrão.
 		}
 
 		@Override
