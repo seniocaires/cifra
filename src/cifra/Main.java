@@ -120,10 +120,10 @@ public class Main extends JFrame {
 	}
 
 	public JTextArea getResultado() {
-		return resultado;
+		return this.resultado;
 	}
 
 	public JTextArea getTexto() {
-		return texto;
+		return this.texto;
 	}
 }
