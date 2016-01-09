@@ -36,16 +36,16 @@ import javax.swing.JTextArea;
 
 /**
  * Data da primeira versão 04/07/2011.
- * @since 0.11.7.1
- * @version 0.11.7.4
  * @author Senio Caires
+ * @version 0.11.7.4
+ * @since 0.11.7.1
  */
 public class Main extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 
-	private JTextArea resultado;
-	private JTextArea texto;
+	private final JTextArea resultado;
+	private transient final JTextArea texto;
 	private static Map<Character,Character> hash;
 
 	static {
@@ -197,8 +197,6 @@ public class Main extends JFrame {
 
 		super("Cifra");
 
-		setResizable(false);
-
 		Container tela = getContentPane();
 
 		BorderLayout layout = new BorderLayout();
@@ -212,13 +210,13 @@ public class Main extends JFrame {
 		botaoConverter.addActionListener(tratador);
 		botaoLimpar.addActionListener(tratadorLimpar);
 
-		resultado = new JTextArea(10, 20);
-		texto = new JTextArea(10, 20);
-		texto.setText("Digite o texto aqui.");
+		this.resultado = new JTextArea(10, 20);
+		this.texto = new JTextArea(10, 20);
+		this.texto.setText("Digite o texto aqui.");
 
-		resultado.setEditable(false);
+		this.resultado.setEditable(false);
 
-		JScrollPane painelRolagemTexto = new JScrollPane(resultado);
+		JScrollPane painelRolagemTexto = new JScrollPane(this.resultado);
 		painelRolagemTexto.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 		painelRolagemTexto.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 
@@ -243,10 +241,25 @@ public class Main extends JFrame {
 		tela.add(BorderLayout.CENTER, pCentro);
 		tela.add(BorderLayout.SOUTH, pInferiorBotao);
 
-		pack();
-		setVisible(true);
+		alterarConfiguracoes(false, true);
+
+		empacotar();
 	}
 
+	private void alterarConfiguracoes(boolean redimensionavel, boolean visivel) {
+		setResizable(redimensionavel);
+		setVisible(visivel);
+	}
+
+	private void empacotar() {
+		pack();
+	}
+
+	/**
+	 * Método para inicializar a aplicação.
+	 * @author Senio Caires
+	 * @param args
+	 */
 	public static void main(String args[]) {
 		Main app = new Main();
 		app.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -254,14 +267,16 @@ public class Main extends JFrame {
 
 	private class Tratador implements ActionListener {
 
-		public void actionPerformed(ActionEvent e) {
+		@Override
+		public void actionPerformed(ActionEvent actionEvent) {
 			resultado.setText(cripDecrip(texto.getText()));
 		}
 	}
 
 	private class TratadorLimpar implements ActionListener {
 
-		public void actionPerformed(ActionEvent e) {
+		@Override
+		public void actionPerformed(ActionEvent actionEvent) {
 			resultado.setText("");
 			texto.setText("");
 		}
@@ -273,10 +288,10 @@ public class Main extends JFrame {
 
 		for (char character : mensagem.toCharArray()) {
 
-			if (null != hash.get(character)) {
-				resultado.append(hash.get(character));
-			} else {
+			if (hash.get(character) == null) {
 				resultado.append(character);
+			} else {
+				resultado.append(hash.get(character));
 			}
 		}
 
