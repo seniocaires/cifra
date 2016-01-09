@@ -2,4 +2,4 @@
 Cifrar textos
 <br/>
 <br/>
-Controle de qualidade: <a href="www.sporeon.com:9000">Acessar o sonar</a>
+Controle de qualidade: www.sporeon.com:9000
