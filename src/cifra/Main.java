@@ -168,7 +168,7 @@ public class Main extends JFrame {
 
 		String textoCifrado = Main.cripDecrip(this.texto.getText());
 
-		alterarTextoCifrado(textoCifrado);
+		this.alterarTextoCifrado(textoCifrado);
 	}
 
 	private static String cripDecrip(String mensagem) {
