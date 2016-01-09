@@ -47,6 +47,18 @@ public class Main extends JFrame {
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * Quantidade de linhas dos text area.
+	 * @author Senio Caires
+	 */
+	private static final int TEXT_AREA_LINHAS = 10;
+
+	/**
+	 * Quantidade de colunas dos text area.
+	 * @author Senio Caires
+	 */
+	private static final int TEXT_AREA_COLUNAS = 20;
+
+	/**
 	 * Resultado da cifra.
 	 * @author Senio Caires
 	 */
@@ -122,8 +134,8 @@ public class Main extends JFrame {
 		botaoConverter.addActionListener(tratador);
 		botaoLimpar.addActionListener(tratadorLimpar);
 
-		this.resultado = new JTextArea(10, 20);
-		this.texto = new JTextArea(10, 20);
+		this.resultado = new JTextArea(TEXT_AREA_LINHAS, TEXT_AREA_COLUNAS);
+		this.texto = new JTextArea(TEXT_AREA_LINHAS, TEXT_AREA_COLUNAS);
 		this.texto.setText("Digite o texto aqui.");
 
 		this.resultado.setEditable(false);
