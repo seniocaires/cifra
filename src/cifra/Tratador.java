@@ -33,7 +33,7 @@ public class Tratador implements ActionListener {
 	 * App.
 	 * @author Senio Caires
 	 */
-	private final transient Main app;
+	private final Main app;
 
 	/**
 	 * Construir informando a app.

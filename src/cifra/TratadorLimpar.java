@@ -24,7 +24,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * Action Listener
+ * Action Listener.
  * @author Senio Caires
  */
 public class TratadorLimpar implements ActionListener {
@@ -33,7 +33,7 @@ public class TratadorLimpar implements ActionListener {
 	 * App.
 	 * @author Senio Caires
 	 */
-	private final transient Main app;
+	private final Main app;
 
 	/**
 	 * Construir informando a app.

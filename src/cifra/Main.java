@@ -192,7 +192,7 @@ public class Main extends JFrame {
 	 * @param args - argumentos passados ao inicializar a aplicação não serão utilizados
 	 */
 	public static void main(String... args) {
-		Main app = new Main();
+		final Main app = new Main();
 		app.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
