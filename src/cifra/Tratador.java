@@ -23,14 +23,31 @@ package cifra;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Action Listener.
+ * @author Senio Caires
+ */
 public class Tratador implements ActionListener {
 
-	private transient final Main app;
+	/**
+	 * App.
+	 * @author Senio Caires
+	 */
+	private final Main app;
 
+	/**
+	 * Construir informando a app.
+	 * @author Senio Caires
+	 * @param app - Aplicação
+	 */
 	public Tratador(Main app) {
 		this.app = app;
 	}
 
+	/**
+	 * Action Performed.
+	 * @author Senio Caires
+	 */
 	@Override
 	public void actionPerformed(ActionEvent actionEvent) {
 		this.app.cifrarDecifrarTexto();

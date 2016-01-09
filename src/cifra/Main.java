@@ -50,13 +50,13 @@ public class Main extends JFrame {
 	 * Resultado da cifra.
 	 * @author Senio Caires
 	 */
-	private transient final JTextArea resultado;
+	private final transient JTextArea resultado;
 
 	/**
 	 * Texto digitado pelo usuário.
 	 * @author Senio Caires
 	 */
-	private transient final JTextArea texto;
+	private final transient JTextArea texto;
 
 	/**
 	 * Hash com as chaves.
@@ -132,7 +132,7 @@ public class Main extends JFrame {
 		painelRolagemTexto.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 		painelRolagemTexto.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 
-		final JScrollPane painelRolagemResultado = new JScrollPane(texto);
+		final JScrollPane painelRolagemResultado = new JScrollPane(this.texto);
 		painelRolagemResultado.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 		painelRolagemResultado.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 
@@ -211,7 +211,7 @@ public class Main extends JFrame {
 	 */
 	public void cifrarDecifrarTexto() {
 
-		String textoCifrado = Main.cripDecrip(this.texto.getText());
+		final String textoCifrado = Main.cripDecrip(this.texto.getText());
 
 		this.alterarTextoCifrado(textoCifrado);
 	}
@@ -224,9 +224,9 @@ public class Main extends JFrame {
 	 */
 	private static String cripDecrip(String mensagem) {
 
-		StringBuilder resultado = new StringBuilder();
+		final StringBuilder resultado = new StringBuilder();
 
-		for (char character : mensagem.toCharArray()) {
+		for (final char character : mensagem.toCharArray()) {
 
 			if (hash.get(character) == null) {
 				resultado.append(character);
