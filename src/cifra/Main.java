@@ -119,6 +119,14 @@ public class Main extends JFrame {
 		app.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
+	public void alterarTextoCifrado(String textoCifrado) {
+		this.resultado.setText(textoCifrado);
+	}
+
+	public String getTextoEscrito() {
+		return this.getTexto().getText();
+	}
+
 	public JTextArea getResultado() {
 		return this.resultado;
 	}

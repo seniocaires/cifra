@@ -74,7 +74,10 @@ public class Tratador implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent actionEvent) {
-		this.app.getResultado().setText(cripDecrip(this.app.getTexto().getText()));
+
+		String textoCifrado = cripDecrip(this.app.getTextoEscrito());
+
+		this.app.alterarTextoCifrado(textoCifrado);
 	}
 
 	private static String cripDecrip(String mensagem) {
