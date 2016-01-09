@@ -245,7 +245,7 @@ public class Main extends JFrame {
 
 		this.empacotar();
 	}
-
+ 
 	private void alterarConfiguracoes(boolean redimensionavel, boolean visivel) {
 		setResizable(redimensionavel);
 		setVisible(visivel);
