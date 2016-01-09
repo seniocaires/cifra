@@ -33,7 +33,7 @@ public class TratadorLimpar implements ActionListener {
 	 * App.
 	 * @author Senio Caires
 	 */
-	private final Main app;
+	private final transient Main app;
 
 	/**
 	 * Construir informando a app.
