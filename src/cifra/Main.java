@@ -241,9 +241,9 @@ public class Main extends JFrame {
 		tela.add(BorderLayout.CENTER, pCentro);
 		tela.add(BorderLayout.SOUTH, pInferiorBotao);
 
-		alterarConfiguracoes(false, true);
+		this.alterarConfiguracoes(false, true);
 
-		empacotar();
+		this.empacotar();
 	}
 
 	private void alterarConfiguracoes(boolean redimensionavel, boolean visivel) {
@@ -267,6 +267,9 @@ public class Main extends JFrame {
 
 	private class Tratador implements ActionListener {
 
+		public Tratador() {
+		}
+
 		@Override
 		public void actionPerformed(ActionEvent actionEvent) {
 			resultado.setText(cripDecrip(texto.getText()));
@@ -274,6 +277,9 @@ public class Main extends JFrame {
 	}
 
 	private class TratadorLimpar implements ActionListener {
+
+		public TratadorLimpar() {
+		}
 
 		@Override
 		public void actionPerformed(ActionEvent actionEvent) {
