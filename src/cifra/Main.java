@@ -40,11 +40,28 @@ import javax.swing.JTextArea;
  */
 public class Main extends JFrame {
 
+	/**
+	 * serialVersionUID.
+	 * @author Senio Caires
+	 */
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Resultado da cifra.
+	 * @author Senio Caires
+	 */
 	private transient final JTextArea resultado;
+
+	/**
+	 * Texto digitado pelo usuário.
+	 * @author Senio Caires
+	 */
 	private transient final JTextArea texto;
 
+	/**
+	 * Hash com as chaves.
+	 * @author Senio Caires
+	 */
 	private static Map<Character,Character> hash;
 
 	static {
@@ -84,20 +101,24 @@ public class Main extends JFrame {
 		hash.put('G', 'D');
 	}
 
+	/**
+	 * Construtor e inicializador.
+	 * @author Senio Caires
+	 */
 	public Main() {
 
 		super("Cifra");
 
-		Container tela = obterContainer();
+		final Container tela = obterContainer();
 
-		BorderLayout layout = new BorderLayout();
+		final BorderLayout layout = new BorderLayout();
 		tela.setLayout(layout);
 
-		Tratador tratador = new Tratador(this);
-		TratadorLimpar tratadorLimpar = new TratadorLimpar(this);
+		final Tratador tratador = new Tratador(this);
+		final TratadorLimpar tratadorLimpar = new TratadorLimpar(this);
 
-		JButton botaoConverter = new JButton("Converter");
-		JButton botaoLimpar = new JButton("Limpar");
+		final JButton botaoConverter = new JButton("Converter");
+		final JButton botaoLimpar = new JButton("Limpar");
 		botaoConverter.addActionListener(tratador);
 		botaoLimpar.addActionListener(tratadorLimpar);
 
@@ -107,23 +128,23 @@ public class Main extends JFrame {
 
 		this.resultado.setEditable(false);
 
-		JScrollPane painelRolagemTexto = new JScrollPane(this.resultado);
+		final JScrollPane painelRolagemTexto = new JScrollPane(this.resultado);
 		painelRolagemTexto.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 		painelRolagemTexto.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 
-		JScrollPane painelRolagemResultado = new JScrollPane(texto);
+		final JScrollPane painelRolagemResultado = new JScrollPane(texto);
 		painelRolagemResultado.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 		painelRolagemResultado.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 
-		JPanel pSuperior = new JPanel();
+		final JPanel pSuperior = new JPanel();
 		pSuperior.setLayout(new FlowLayout(FlowLayout.TRAILING));
 		pSuperior.add(painelRolagemResultado);
 
-		JPanel pCentro = new JPanel();
+		final JPanel pCentro = new JPanel();
 		pCentro.setLayout(new FlowLayout(FlowLayout.TRAILING));
 		pCentro.add(painelRolagemTexto);
 
-		JPanel pInferiorBotao = new JPanel();
+		final JPanel pInferiorBotao = new JPanel();
 		pInferiorBotao.setLayout(new FlowLayout(FlowLayout.RIGHT));
 		pInferiorBotao.add(botaoLimpar);
 		pInferiorBotao.add(botaoConverter);
@@ -137,15 +158,30 @@ public class Main extends JFrame {
 		this.empacotar();
 	}
 
+	/**
+	 * Altera as configurações da janela.
+	 * @author Senio Caires
+	 * @param redimensionavel - Define se a janela será redimensionável
+	 * @param visivel - Define se a janela será visível
+	 */
 	private void alterarConfiguracoes(boolean redimensionavel, boolean visivel) {
 		setResizable(redimensionavel);
 		setVisible(visivel);
 	}
 
+	/**
+	 * Empacota as configurações.
+	 * @author Senio Caires
+	 */
 	private void empacotar() {
 		pack();
 	}
 
+	/**
+	 * Retorna o container.
+	 * @author Senio Caires
+	 * @return {@link Container}
+	 */
 	private Container obterContainer() {
 		return getContentPane();
 	}
@@ -160,10 +196,19 @@ public class Main extends JFrame {
 		app.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
+	/**
+	 * Altera o texto cifrado para o texto passado como parâmetro.
+	 * @author Senio Caires
+	 * @param textoCifrado - Texto cifrado
+	 */
 	public void alterarTextoCifrado(String textoCifrado) {
 		this.resultado.setText(textoCifrado);
 	}
 
+	/**
+	 * Cifra e/ou decifra o texto que o usuário digitou.
+	 * @author Senio Caires
+	 */
 	public void cifrarDecifrarTexto() {
 
 		String textoCifrado = Main.cripDecrip(this.texto.getText());
@@ -171,6 +216,12 @@ public class Main extends JFrame {
 		this.alterarTextoCifrado(textoCifrado);
 	}
 
+	/**
+	 * Método para cifrar.
+	 * @author Senio Caires
+	 * @param mensagem - Mensagem a ser cifrada
+	 * @return {@link String}
+	 */
 	private static String cripDecrip(String mensagem) {
 
 		StringBuilder resultado = new StringBuilder();
@@ -187,10 +238,20 @@ public class Main extends JFrame {
 		return resultado.reverse().toString();
 	}
 
+	/**
+	 * Retorna text area do resultado da cifra.
+	 * @author Senio Caires
+	 * @return {@link JTextArea}
+	 */
 	public JTextArea getResultado() {
 		return this.resultado;
 	}
 
+	/**
+	 * Retorna o text area do texto digitado pelo usuário.
+	 * @author Senio Caires
+	 * @return {@link JTextArea}
+	 */
 	public JTextArea getTexto() {
 		return this.texto;
 	}
