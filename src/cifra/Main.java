@@ -23,6 +23,8 @@ package cifra;
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.FlowLayout;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -42,6 +44,45 @@ public class Main extends JFrame {
 
 	private transient final JTextArea resultado;
 	private transient final JTextArea texto;
+
+	private static Map<Character,Character> hash;
+
+	static {
+
+		hash = new HashMap<Character, Character>();
+
+		// Adicione mais pares de caracteres para aumentar a complexidade da cifra.
+
+		hash.put('a', 'p');
+		hash.put('p', 'a');
+		hash.put('A', 'P');
+		hash.put('P', 'A');
+
+		hash.put('e', 'z');
+		hash.put('z', 'e');
+		hash.put('E', 'Z');
+		hash.put('Z', 'E');
+
+		hash.put('i', 'r');
+		hash.put('r', 'i');
+		hash.put('I', 'R');
+		hash.put('R', 'I');
+
+		hash.put('o', 'f');
+		hash.put('f', 'o');
+		hash.put('O', 'F');
+		hash.put('F', 'O');
+
+		hash.put('u', 'c');
+		hash.put('c', 'u');
+		hash.put('U', 'C');
+		hash.put('C', 'U');
+
+		hash.put('d', 'g');
+		hash.put('g', 'd');
+		hash.put('D', 'G');
+		hash.put('G', 'D');
+	}
 
 	public Main() {
 
@@ -125,6 +166,29 @@ public class Main extends JFrame {
 
 	public String getTextoEscrito() {
 		return this.getTexto().getText();
+	}
+
+	public void cifrarDecifrarTexto() {
+
+		String textoCifrado = cripDecrip(getTextoEscrito());
+
+		alterarTextoCifrado(textoCifrado);
+	}
+
+	private static String cripDecrip(String mensagem) {
+
+		StringBuilder resultado = new StringBuilder();
+
+		for (char character : mensagem.toCharArray()) {
+
+			if (hash.get(character) == null) {
+				resultado.append(character);
+			} else {
+				resultado.append(hash.get(character));
+			}
+		}
+
+		return resultado.reverse().toString();
 	}
 
 	public JTextArea getResultado() {
